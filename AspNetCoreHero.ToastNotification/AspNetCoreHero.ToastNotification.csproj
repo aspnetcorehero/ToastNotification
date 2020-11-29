@@ -8,6 +8,17 @@
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+    <Folder Include="Notyf\Models\" />
+    <Folder Include="Views\Shared\Components\ToastifyJs\" />
+    <Folder Include="Views\Shared\Components\Notyf\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
   
 
 

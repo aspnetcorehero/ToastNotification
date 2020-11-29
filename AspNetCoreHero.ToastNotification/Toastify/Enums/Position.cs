@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AspNetCoreHero.ToastNotification.Toastify.Enums
+{
+    public enum Position
+    {
+        [Description("left")]
+        Left,
+        [Description("right")]
+        Right
+    }
+}

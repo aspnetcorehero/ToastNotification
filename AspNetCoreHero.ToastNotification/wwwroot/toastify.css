@@ -5,6 +5,31 @@
  *
  * Copyright (C) 2018 Varun A P
  */
+.toast-close {
+    opacity: 0.4;
+    padding: 0 5px;
+}
+
+.toast-close:hover {
+    opacity: 1;
+}
+
+.toast-close:before, .toast-close:after {
+    position: absolute;
+    left: 15px;
+    height: 10px;
+    width: 2px;
+    background-color: #333;
+}
+
+.toast-close:before {
+    transform: rotate(45deg);
+}
+
+.toast-close:after {
+    transform: rotate(-45deg);
+}
+
 
 .toastify {
     padding: 12px 20px;
@@ -28,8 +53,7 @@
 }
 
 .toast-close {
-    opacity: 0.4;
-    padding: 0 5px;
+   
 }
 
 .toastify-right {

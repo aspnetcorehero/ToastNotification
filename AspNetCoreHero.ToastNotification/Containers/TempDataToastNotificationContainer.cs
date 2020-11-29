@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace AspNetCoreHero.ToastNotification.Containers
 {
-    public class TempDataToastNotificationContainer<TMessage> : IToastNotificationContainer<TMessage> where TMessage : class
+    public class TempDataToastNotificationContainer<TMessage> : IToastNotificationContainer<TMessage> where TMessage : Notification
     {
         private readonly ITempDataService _tempDataWrapper;
         private const string Key = "AspNetCoreHero.ToastNotification";

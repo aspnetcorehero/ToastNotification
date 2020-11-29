@@ -2,11 +2,11 @@
 
 namespace AspNetCoreHero.ToastNotification.Abstractions
 {
-    public interface IToastNotificationContainer<TMessage> where TMessage : class
+    public interface IToastNotificationContainer<TNotification>
     {
-        void Add(TMessage message);
+        void Add(TNotification notification);
         void RemoveAll();
-        IList<TMessage> GetAll();
-        IList<TMessage> ReadAll();
+        IList<TNotification> GetAll();
+        IList<TNotification> ReadAll();
     }
 }

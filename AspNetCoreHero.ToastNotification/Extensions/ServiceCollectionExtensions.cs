@@ -1,5 +1,7 @@
 ﻿using AspNetCoreHero.ToastNotification.Abstractions;
 using AspNetCoreHero.ToastNotification.Containers;
+using AspNetCoreHero.ToastNotification.Notyf;
+using AspNetCoreHero.ToastNotification.Notyf.Models;
 using AspNetCoreHero.ToastNotification.Services;
 using AspNetCoreHero.ToastNotification.Toastify;
 using AspNetCoreHero.ToastNotification.Toastify.Models;
@@ -53,5 +55,23 @@ namespace AspNetCoreHero.ToastNotification
             #endregion
         }
 
+        public static void AddNotyf(this IServiceCollection services, Action<NotyfConfig> configure)
+        {
+            var configurationValue = new NotyfConfig();
+            configure(configurationValue);
+            var options = new NotyfEntity(configurationValue.DurationInSeconds, configurationValue.Position, configurationValue.IsDismissable);
+            if (services == null)
+            {
+                throw new ArgumentNullException(nameof(services));
+            }
+
+            services.AddFrameworkServices();
+            //Add TempDataWrapper for accessing and adding values to tempdata.
+            services.AddSingleton<ITempDataService, TempDataService>();
+            services.AddSingleton<IToastNotificationContainer<NotyfNotification>, TempDataToastNotificationContainer<NotyfNotification>>();
+            services.AddSingleton(options);
+            //Add the ToastNotification implementation
+            services.AddScoped<INotyfService, NotyfService>();
+        }
     }
 }

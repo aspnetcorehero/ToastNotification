@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace AspNetCoreHero.ToastNotification.Notyf.Enums
+namespace AspNetCoreHero.ToastNotification
 {
     public enum NotyfPosition
     {

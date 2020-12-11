@@ -11,6 +11,7 @@ ToastNotification is a Minimal & Elegant Toast Notification Package for ASP.NET 
 - 🐣 Simple and Customizable. Create your own custom toast with your favorite color and icons with ease!
 - 👴🏽 Works with TempData internally.
 - 📱 Currently Supports 2 Popuplar JS Library.
+- 📱 Supports AJAX / XHR out of the box.
 
 More Features Coming Soon.
 > Not Compatible with Blazor SDK. Intended only for ASP.NET Core Web Applications.
@@ -46,6 +47,13 @@ services.AddNotyf(config=> { config.DurationInSeconds = 10;config.IsDismissable 
 > Available Positions are TopRight,BottomRight,BottomLeft,TopLeft,TopCenter,BottomCenter.
 Set the isDismissible bool to false, to remove the close icon from your toasts! Pretty handy.
 
+### From v1.1.0 - AJAX / XHR is fully supported
+
+To enable toast notification while working with AJAX Requests, you will have to add the middleware into the Service Container. Open up Startup.cs and add the following line of code under the Configure method.
+
+```csharp
+app.UseNotyf();
+```
 
 > More settings will be added in the upcoming releases
 

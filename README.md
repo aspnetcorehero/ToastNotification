@@ -25,6 +25,12 @@ Or
 ```
 dotnet add package AspNetCoreHero.ToastNotification
 ```
+
+Or
+
+Get it directly from NuGet - https://www.nuget.org/packages/AspNetCoreHero.ToastNotification/
+
+
 As mentioned earlier, this project / package is an ASP.NET Core Abstraction of popular Javascript libraries that are responsible for toast notifications. Currently, 2 popuplar libraries are abstracted , Notyf and ToastifyJs. You can choose to use either of them based on their look and feel. Follow the guide below for each of the toast notification library. Cheers!
 
 # Notyf

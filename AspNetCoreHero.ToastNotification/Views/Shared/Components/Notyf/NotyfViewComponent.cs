@@ -13,7 +13,7 @@ namespace AspNetCoreHero.ToastNotification.Views.Shared.Components.Notyf
 
         public NotyfViewComponent(INotyfService service, NotyfEntity options)
         {
-            this._service = service;
+            _service = service;
             _options = options;
         }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AspNetCoreHero.ToastNotification.Abstractions
 {
-    public interface INotyfService : IToastNotificationService
+    public interface INotyfService
     {
         void Success(string message, int? durationInSeconds = null);
         void Error(string message, int? durationInSeconds = null);

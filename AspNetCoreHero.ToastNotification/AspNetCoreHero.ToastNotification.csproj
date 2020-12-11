@@ -11,10 +11,10 @@
     <Description>Elegant Toast Notifications for ASP.NET Core Applications. Compatilble with ASP.NET Core 3.1 and .NET 5.</Description>
     <Copyright>2020</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <AssemblyVersion>1.0.0</AssemblyVersion>
-    <FileVersion>1.0.0</FileVersion>
-    <Version>1.0.0</Version>
-    <PackageIcon>Logo_600x600.png</PackageIcon>
+    <AssemblyVersion>1.1.0</AssemblyVersion>
+    <FileVersion>1.1.0</FileVersion>
+    <Version>1.1.0</Version>
+    <PackageIcon>logo-transparent.png</PackageIcon>
     <PackageProjectUrl>https://github.com/aspnetcorehero/ToastNotification</PackageProjectUrl>
     <RepositoryUrl>https://github.com/aspnetcorehero/ToastNotification</RepositoryUrl>
   </PropertyGroup>
@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="D:\Photoshop\ANCH\Logo_600x600.png">
+    <None Include="D:\Photoshop\ANCH\logo-transparent.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>

@@ -1,5 +1,6 @@
 ﻿using AspNetCoreHero.ToastNotification.Abstractions;
 using AspNetCoreHero.ToastNotification.Containers;
+using AspNetCoreHero.ToastNotification.Middlewares;
 using AspNetCoreHero.ToastNotification.Notyf;
 using AspNetCoreHero.ToastNotification.Notyf.Models;
 using AspNetCoreHero.ToastNotification.Services;
@@ -66,12 +67,19 @@ namespace AspNetCoreHero.ToastNotification
             }
 
             services.AddFrameworkServices();
+
             //Add TempDataWrapper for accessing and adding values to tempdata.
             services.AddSingleton<ITempDataService, TempDataService>();
-            services.AddSingleton<IToastNotificationContainer<NotyfNotification>, TempDataToastNotificationContainer<NotyfNotification>>();
-            services.AddSingleton(options);
+            // Add MessageContainerFactory for creating MessageContainer instance
+            services.AddSingleton<IMessageContainerFactory, MessageContainerFactory>();
+            //services.AddSingleton<IToastNotificationContainer<NotyfNotification>, TempDataToastNotificationContainer<NotyfNotification>>();
+            //services.AddSingleton<IToastNotificationContainer<NotyfNotification>, InMemoryNotificationContainer<NotyfNotification>>();
             //Add the ToastNotification implementation
             services.AddScoped<INotyfService, NotyfService>();
+            //Middleware
+            services.AddScoped<NotyfMiddleware>();
+            services.AddSingleton(options);
+            
         }
     }
 }

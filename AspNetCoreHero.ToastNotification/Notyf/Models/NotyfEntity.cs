@@ -7,7 +7,7 @@ namespace AspNetCoreHero.ToastNotification.Notyf.Models
     {
         public NotyfEntity(int durationInSeconds = 5, NotyfPosition toastPosition = NotyfPosition.BottomRight, bool isDismissible = true)
         {
-            duration = (durationInSeconds > 0) ? durationInSeconds * 1000 : 5000;
+            duration = durationInSeconds > 0 ? durationInSeconds * 1000 : 5000;
             dismissible = isDismissible;
             ripple = true;
             try
@@ -16,8 +16,8 @@ namespace AspNetCoreHero.ToastNotification.Notyf.Models
                 var positionArray = description.Split('-');
                 position = new Position()
                 {
-                    x = (positionArray is null) ? "right" : positionArray[0],
-                    y = (positionArray is null) ? "bottom" : positionArray[1]
+                    x = positionArray is null ? "right" : positionArray[0],
+                    y = positionArray is null ? "bottom" : positionArray[1]
                 };
             }
             catch

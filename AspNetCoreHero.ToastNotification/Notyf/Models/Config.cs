@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AspNetCoreHero.ToastNotification.Notyf.Models
+﻿namespace AspNetCoreHero.ToastNotification.Notyf.Models
 {
     public class Config
     {

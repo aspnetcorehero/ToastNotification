@@ -6,7 +6,7 @@
 
 <script src="~/notyf.min.js"></script>
 
-<script>
+<script @(Model.isCspSecure ? "nonce=\"@ViewContext.HttpContext.Items[\"CspRequestHash\"]?.ToString()" : "")>
     const notyf = new Notyf(@Html.Raw(Model.Configuration));
 </script>
 
@@ -55,7 +55,7 @@
     }
 }
 
-<script type="text/javascript">
+<script @(Model.isCspSecure ? "nonce=\"@ViewContext.HttpContext.Items[\"CspRequestHash\"]?.ToString()" : "")>
 
     function toastNotifySuccess(message, duration) {
         if (duration) { notyf.success({ message: message, duration: duration }); }

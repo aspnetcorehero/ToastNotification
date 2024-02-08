@@ -5,11 +5,12 @@ namespace AspNetCoreHero.ToastNotification.Notyf.Models
 {
     public class NotyfEntity
     {
-        public NotyfEntity(int durationInSeconds = 5, NotyfPosition toastPosition = NotyfPosition.BottomRight, bool isDismissible = true)
+        public NotyfEntity(int durationInSeconds = 5, NotyfPosition toastPosition = NotyfPosition.BottomRight, bool isDismissible = true, bool isCspSecure = false)
         {
             duration = durationInSeconds > 0 ? durationInSeconds * 1000 : 5000;
             dismissible = isDismissible;
             ripple = true;
+            cspSecure = isCspSecure;
             try
             {
                 string description = ToDescriptionString(toastPosition);
@@ -73,6 +74,7 @@ namespace AspNetCoreHero.ToastNotification.Notyf.Models
         public int duration { get; set; }
         public Position position { get; set; }
         public bool dismissible { get; set; } = true;
+        public bool cspSecure { get; set; } = false;
         public bool ripple { get; set; } = true;
         public List<Config> types { get; set; }
         private static string ToDescriptionString(NotyfPosition val)

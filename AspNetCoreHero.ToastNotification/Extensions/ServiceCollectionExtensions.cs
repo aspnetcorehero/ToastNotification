@@ -32,7 +32,7 @@ namespace AspNetCoreHero.ToastNotification
             //Add the ToastNotification implementation
             services.AddScoped<IToastifyService, ToastifyService>();
             services.AddSingleton(toastify);
-           
+
         }
         private static void AddFrameworkServices(this IServiceCollection services)
         {
@@ -57,7 +57,7 @@ namespace AspNetCoreHero.ToastNotification
         {
             var configurationValue = new NotyfConfig();
             configure(configurationValue);
-            var options = new NotyfEntity(configurationValue.DurationInSeconds, configurationValue.Position, configurationValue.IsDismissable);
+            var options = new NotyfEntity(configurationValue.DurationInSeconds, configurationValue.Position, configurationValue.IsDismissable, isCspSecure: configurationValue.IsCspSecure);
             if (services == null)
             {
                 throw new ArgumentNullException(nameof(services));
@@ -76,7 +76,7 @@ namespace AspNetCoreHero.ToastNotification
             //Middleware
             services.AddScoped<NotyfMiddleware>();
             services.AddSingleton(options);
-            
+
         }
     }
 }

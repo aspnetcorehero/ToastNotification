@@ -1,5 +1,3 @@
-using System;
-
 namespace ToastNotification.Notyf.Models
 {
     public class ErrorViewModel

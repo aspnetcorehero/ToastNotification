@@ -1,13 +1,7 @@
 ﻿using AspNetCoreHero.ToastNotification.Abstractions;
-using AspNetCoreHero.ToastNotification.Helpers;
 using AspNetCoreHero.ToastNotification.Toastify;
 using AspNetCoreHero.ToastNotification.Toastify.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AspNetCoreHero.ToastNotification.Views.Shared.Components.Toastify
 {

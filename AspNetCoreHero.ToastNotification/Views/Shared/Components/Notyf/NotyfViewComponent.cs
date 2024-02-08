@@ -26,6 +26,7 @@ namespace AspNetCoreHero.ToastNotification.Views.Shared.Components.Notyf
                 Configuration = _options.ToJson(),
                 Notifications = _service.ReadAllNotifications()
             };
+
             return View("Default", model);
         }
     }

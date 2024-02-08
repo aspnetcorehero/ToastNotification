@@ -10,10 +10,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AspNetCoreHero.ToastNotification
 {
@@ -35,7 +32,7 @@ namespace AspNetCoreHero.ToastNotification
             //Add the ToastNotification implementation
             services.AddScoped<IToastifyService, ToastifyService>();
             services.AddSingleton(toastify);
-           
+
         }
         private static void AddFrameworkServices(this IServiceCollection services)
         {
@@ -60,7 +57,7 @@ namespace AspNetCoreHero.ToastNotification
         {
             var configurationValue = new NotyfConfig();
             configure(configurationValue);
-            var options = new NotyfEntity(configurationValue.DurationInSeconds, configurationValue.Position, configurationValue.IsDismissable);
+            var options = new NotyfEntity(configurationValue.DurationInSeconds, configurationValue.Position, configurationValue.IsDismissable, isCspSecure: configurationValue.IsCspSecure);
             if (services == null)
             {
                 throw new ArgumentNullException(nameof(services));
@@ -79,7 +76,7 @@ namespace AspNetCoreHero.ToastNotification
             //Middleware
             services.AddScoped<NotyfMiddleware>();
             services.AddSingleton(options);
-            
+
         }
     }
 }

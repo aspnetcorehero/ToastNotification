@@ -24,8 +24,10 @@ namespace AspNetCoreHero.ToastNotification.Views.Shared.Components.Notyf
             var model = new NotyfViewModel
             {
                 Configuration = _options.ToJson(),
+                isCspSecure = _options.cspSecure,
                 Notifications = _service.ReadAllNotifications()
             };
+
             return View("Default", model);
         }
     }

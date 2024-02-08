@@ -1,7 +1,6 @@
 ﻿using AspNetCoreHero.ToastNotification.Abstractions;
 using AspNetCoreHero.ToastNotification.Enums;
 using AspNetCoreHero.ToastNotification.Toastify.Models;
-using System;
 using System.Collections.Generic;
 
 namespace AspNetCoreHero.ToastNotification.Toastify

@@ -1,11 +1,15 @@
 ﻿@model AspNetCoreHero.ToastNotification.Notyf.NotyfViewModel
 @using AspNetCoreHero.ToastNotification.Enums
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-<link rel="stylesheet" href="~/_content/AspNetCoreHero.ToastNotification/notyf.min.css">
-<script src="~/_content/AspNetCoreHero.ToastNotification/notyf.min.js"></script>
-<script>
+
+<link rel="stylesheet" href="~/libs/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="~/notyf.min.css">
+
+<script src="~/notyf.min.js"></script>
+
+<script @(Model.isCspSecure ? "nonce=\"@ViewContext.HttpContext.Items[\"CspRequestHash\"]?.ToString()" : "")>
     const notyf = new Notyf(@Html.Raw(Model.Configuration));
 </script>
+
 @{
     @if (Model.Notifications != null)
     {
@@ -48,11 +52,10 @@
                     break;
             }
         }
-
     }
-
 }
-<script type="text/javascript">
+
+<script @(Model.isCspSecure ? "nonce=\"@ViewContext.HttpContext.Items[\"CspRequestHash\"]?.ToString()" : "")>
 
     function toastNotifySuccess(message, duration) {
         if (duration) { notyf.success({ message: message, duration: duration }); }

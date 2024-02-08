@@ -37,8 +37,10 @@ namespace AspNetCoreHero.ToastNotification.Middlewares
                 var messages = new NotyfViewModel
                 {
                     Configuration = _options.ToJson(),
+                    isCspSecure = _options.cspSecure,
                     Notifications = _toastNotification.ReadAllNotifications()
                 };
+
                 if (messages.Notifications != null && messages.Notifications.Any())
                 {
                     var accessControlExposeHeaders = $"{GetControlExposeHeaders(httpContext.Response.Headers)}";
